@@ -9,8 +9,9 @@ import Foundation
 import UIKit
 
 @objc protocol WellcomeViewProtocol: BaseProtocol{
-    //func reloadInfo(data: String)
-//    func goToDetail()
+    //func printInfo(data: Array<Persona>)
+    func printString(data: String)
+    func loadArray()
 }
 protocol WellcomePresenterProtocol {
 
@@ -21,11 +22,12 @@ protocol WellcomePresenterProtocol {
 
 }
 protocol WellcomeInteractorProtocol {
-    
+    func getData() -> Array<Persona>
 }
 protocol WellcomeServiceProtocol {
-    
+    func getDataService() -> DataServiceProtocol
 }
 protocol WellcomeCoordinatorDelegate {
     //Functions to go to another screen
+    func gotoDetailScreen(sender:UIViewController)
 }

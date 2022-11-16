@@ -40,12 +40,16 @@ class AppCoordinator: Coordinator{
     }
     func showWellcome() {
         //Coordinator
+        print("Instancia coordinador")
         let coordinator = WellcomeCoordinator()
         //Interactor
-        let interactor = WellcomeInteractor()
+        print("Instancia interactor")
+        let interactor = WellcomeInteractor(array: Array<Persona>())
         //Presenter
+        print("Instancia presenter")
         let presenter = WellcomePresenter(interactor: interactor)
         //View
+        print("Instancia wiew")
         let view = WellcomeViewController()
         
         view.delegate = coordinator

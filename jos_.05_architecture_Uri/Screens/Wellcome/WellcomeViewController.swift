@@ -16,6 +16,7 @@ class WellcomeViewController: UIViewController{
     //MARK: Variables
     var presenter : WellcomePresenterProtocol?
     var delegate : WellcomeCoordinatorDelegate?
+    var arrayPersons : Array<Persona> = []
     
     //MARK: Init
     public convenience init (presenter: WellcomePresenterProtocol){
@@ -34,5 +35,19 @@ class WellcomeViewController: UIViewController{
     }
 }
 extension WellcomeViewController: WellcomeViewProtocol{
+    func loadArray() {
+        print("loading array")
+    }
+    
+    func printString(data: String) {
+        print(data)
+    }
+    
+    func printInfo(data: Array<Persona>) {
+        print(data.count)
+    }
+    
+    
+    
     
 }

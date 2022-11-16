@@ -11,9 +11,11 @@ internal final class WellcomePresenter {
     // MARK: Variables
     var view: WellcomeViewProtocol?
     var interactor: WellcomeInteractorProtocol
+    var arrayPersons: Array<Persona> = []
     
     // MARK: Inits
     init(interactor: WellcomeInteractorProtocol) {
+        print("----Init---- Inicia presenter")
         self.interactor = interactor
     }
     
@@ -23,7 +25,10 @@ internal final class WellcomePresenter {
 
 extension WellcomePresenter: WellcomePresenterProtocol {
     func viewDidLoadWasCalled() {
-        
+        let arrayPersons = interactor.getData()
+        print("WellcomePresenter")
+        print(arrayPersons[1].name)
+        view?.loadArray()
     }
     
     func viewWillAppearWasCalled() {

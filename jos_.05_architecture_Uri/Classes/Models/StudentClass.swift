@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+class Student: Persona{
+    
+    var level: String?
+    
+    init(name: String, level: String) {
+        super.init(name: name)
+        self.level = level
+    }
+}

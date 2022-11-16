@@ -6,7 +6,12 @@
 //
 
 import Foundation
+import UIKit
 
 class WellcomeCoordinator: WellcomeCoordinatorDelegate{
+    func gotoDetailScreen(sender: UIViewController) {
+        //let interactor = WellcomeInteractor()
+    }
+    
     
 }
