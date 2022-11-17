@@ -8,9 +8,11 @@
 import Foundation
 import UIKit
 
-internal final class WellcomeViewController: UIViewController{
+internal final class WellcomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+    
     //MARK: Outlets
     
+    @IBOutlet weak var personsTable: UITableView!
     @IBOutlet weak var btnSomething: UIButton!
     
     //MARK: Variables
@@ -40,12 +42,33 @@ internal final class WellcomeViewController: UIViewController{
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        //TODO: tableview datasource, delegate y register
+        personsTable.register(UITableViewCell.self, forCellReuseIdentifier: "idCell")
+        personsTable.dataSource = self
+        personsTable.delegate = self
+        
         presenter?.viewDidLoadWasCalled()
     }
+    
+    //MARK: funtions of TableView
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arrayPersons.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = personsTable.dequeueReusableCell(withIdentifier: "idCell", for: indexPath)
+
+        //cell.textLabel?.text = personsTable[indexPath.row].name
+        cell.textLabel?.text = "Working"
+        return cell
+    }
+    
 }
 extension WellcomeViewController: WellcomeViewProtocol{
     func loadArray(data: Array<Persona>) {
-        print(data[3].name)
+        arrayPersons = data
+        print(arrayPersons[4].name)
         print("loading array")
     }
     
@@ -56,8 +79,4 @@ extension WellcomeViewController: WellcomeViewProtocol{
     func printInfo(data: Array<Persona>) {
         print(data.count)
     }
-    
-    
-    
-    
 }

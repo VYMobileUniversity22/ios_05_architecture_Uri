@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WellcomeViewController" customModule="jos__05_architecture_Uri" customModuleProvider="target">
             <connections>
                 <outlet property="btnSomething" destination="NrU-p6-f7Y" id="OUX-eu-1D8"/>
+                <outlet property="personsTable" destination="IIG-rH-F0i" id="Ygt-Nf-OTF"/>
                 <outlet property="view" destination="KVg-E2-lgU" id="6YM-GY-rjh"/>
             </connections>
         </placeholder>
