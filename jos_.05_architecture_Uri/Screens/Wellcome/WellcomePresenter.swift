@@ -25,14 +25,17 @@ internal final class WellcomePresenter {
 
 extension WellcomePresenter: WellcomePresenterProtocol {
     func viewDidLoadWasCalled() {
+        print("WellcomePresenter: getData()")
         let arrayPersons = interactor.getData()
-        print("WellcomePresenter")
-        print(arrayPersons[1].name)
-        view?.loadArray()
+        
+        view?.loadArray(data: arrayPersons)
     }
     
     func viewWillAppearWasCalled() {
-        
+//        let arrayPersons = interactor.getData()
+//        print("WellcomePresenter: getData()")
+//        print(arrayPersons[1].name)
+//        view?.loadArray()
     }
     
     

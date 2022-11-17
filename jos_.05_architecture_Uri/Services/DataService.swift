@@ -15,7 +15,7 @@ public class DataService: DataServiceProtocol{
     var arrayPersons = Array<Persona>()
 
     func getData() -> Array<Persona> {
-        print("DataService")
+        print("DataService: Demana info")
         arrayPersons.append(Student(name: "Ana", level: "first"))
         arrayPersons.append(Student(name: "Anina", level: "first"))
         arrayPersons.append(Student(name: "Uri", level: "first"))

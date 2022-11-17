@@ -50,7 +50,7 @@ class AppCoordinator: Coordinator{
         let presenter = WellcomePresenter(interactor: interactor)
         //View
         print("Instancia wiew")
-        let view = WellcomeViewController()
+        let view = WellcomeViewController(presenter: presenter)
         
         view.delegate = coordinator
         presenter.view = view
@@ -60,6 +60,7 @@ class AppCoordinator: Coordinator{
     }
 
     func showDetail(str: String) {
+        print("AppCoordinator showDetail")
         navigationController.show(UIViewController(), sender: nil)
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Persona{
+class Persona: NSObject{
     var name: String
     
     init(name: String) {

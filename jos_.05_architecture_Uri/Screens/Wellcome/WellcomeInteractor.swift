@@ -28,7 +28,7 @@ internal final class WellcomeInteractor {
 extension WellcomeInteractor: WellcomeInteractorProtocol{
     //Funcions amb les que rebrá la info
     func getData() -> Array<Persona> {
-        print("Interactor")
+        print("Interactor: getData()")
         let dataService = wellcomeService.getDataService()
         
         return dataService.getData()

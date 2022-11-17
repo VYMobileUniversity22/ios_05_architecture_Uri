@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class WellcomeViewController: UIViewController{
+internal final class WellcomeViewController: UIViewController{
     //MARK: Outlets
     
     @IBOutlet weak var btnSomething: UIButton!
@@ -20,6 +20,7 @@ class WellcomeViewController: UIViewController{
     
     //MARK: Init
     public convenience init (presenter: WellcomePresenterProtocol){
+        print("----Init---- Inicia View")
         self.init(nibName: "WellcomeViewController", bundle: nil)
         self.presenter = presenter
     }
@@ -33,9 +34,18 @@ class WellcomeViewController: UIViewController{
         viewController.presenter = presenter
         return viewController
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter?.viewWillAppearWasCalled()
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        presenter?.viewDidLoadWasCalled()
+    }
 }
 extension WellcomeViewController: WellcomeViewProtocol{
-    func loadArray() {
+    func loadArray(data: Array<Persona>) {
+        print(data[3].name)
         print("loading array")
     }
     

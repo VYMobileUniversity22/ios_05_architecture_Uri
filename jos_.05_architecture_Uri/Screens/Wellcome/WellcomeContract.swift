@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 @objc protocol WellcomeViewProtocol: BaseProtocol{
-    //func printInfo(data: Array<Persona>)
     func printString(data: String)
-    func loadArray()
+    //Persona declarada como NSObject
+    func loadArray(data: Array<Persona>)
 }
 protocol WellcomePresenterProtocol {
 

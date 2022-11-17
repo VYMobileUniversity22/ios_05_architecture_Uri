@@ -12,11 +12,12 @@ internal final class WellcomeService: WellcomeServiceProtocol {
     private let dataservice : DataServiceProtocol
     
     init(dataservice: DataServiceProtocol = DataService()) {
+        print("----Init---- Inicia Service")
         self.dataservice = dataservice
     }
     
     func getDataService() -> DataServiceProtocol {
-        print("Service")
+        print("Service: func getdataService()")
         return dataservice
     }
     
