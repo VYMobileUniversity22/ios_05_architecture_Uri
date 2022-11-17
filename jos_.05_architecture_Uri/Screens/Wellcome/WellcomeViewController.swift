@@ -59,11 +59,24 @@ internal final class WellcomeViewController: UIViewController, UITableViewDataSo
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = personsTable.dequeueReusableCell(withIdentifier: "idCell", for: indexPath)
 
-        var textOntheCell = arrayPersons[indexPath.row].name
+        let textOntheCell = arrayPersons[indexPath.row].name
         cell.textLabel?.text = textOntheCell
         //cell.textLabel?.text = "Working"
         return cell
     }
+    //Onclick on the table
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+           //Instruction for avoiding to lef selected the row, it will blink
+           personsTable.deselectRow(at: indexPath, animated: true)
+            let personSelected = arrayPersons[indexPath.row]
+            print(personSelected.name)
+           //let vc = ElementController()
+           //vc.title = arrayElements[indexPath.row].name
+           //elementSend = arrayElements[indexPath.row]
+           //Executing segue created on func prepare
+           //performSegue(withIdentifier: "segueElement", sender: self)
+           //navigationController?.pushViewController(vc, animated: true)
+       }
     
 }
 extension WellcomeViewController: WellcomeViewProtocol{
