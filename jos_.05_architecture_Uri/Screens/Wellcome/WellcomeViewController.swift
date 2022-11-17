@@ -59,8 +59,9 @@ internal final class WellcomeViewController: UIViewController, UITableViewDataSo
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = personsTable.dequeueReusableCell(withIdentifier: "idCell", for: indexPath)
 
-        //cell.textLabel?.text = personsTable[indexPath.row].name
-        cell.textLabel?.text = "Working"
+        var textOntheCell = arrayPersons[indexPath.row].name
+        cell.textLabel?.text = textOntheCell
+        //cell.textLabel?.text = "Working"
         return cell
     }
     
